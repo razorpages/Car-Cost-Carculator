@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Car_Cost_Calculator-ACD0A0A3-E10A-412F-9856-B4B690867491")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Car Cost Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

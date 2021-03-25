@@ -48,16 +48,39 @@ namespace Car_Cost_Calculator
             return Login.ToList();
         }
 
+        //Create
+        public Vehicle VehicleAdd(Vehicle vehicle)
+        {
+            using var connection = Connect();
+            connection.Query<Vehicle>(
+            $@"INSERT INTO Vehicle(Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost) VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);", vehicle);
+            return null;
+        }
+
+        public Costs CostsAdd(Costs costs)
+        {
+            using var connection = Connect();
+            connection.Query<Costs>(
+            $@"INSERT INTO costs(Cost_Name, Cost_Amount, Cost_Date, Vehicle_Cost) VALUES (@Cost_Name, @Cost_Amount, @Cost_Date, @Vehicle_Cost);", costs);
+            return null;
+        }
+
+
+
+
+
         /// <summary>
         /// Gets vehicles by Users
         /// </summary>
-        /// <param name="inputID"></param>
-        /// <returns></returns>
+        /// <param name="inputID">Unique Account ID</param>
+        /// <returns>List of All Vehicles from the designated user</returns>
         public List<Vehicle> GetVehiclesByID(string inputID) 
         {
             using var connection = Connect();
             var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle WHERE Account_ID = @inputid", new { inputid = inputID });
             return Items.ToList();
         }
+
+
     }
 }

@@ -211,3 +211,5 @@ C:\Users\niels\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculato
 C:\Users\niels\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.dll
 C:\Users\niels\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.pdb
 C:\Users\niels\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.genruntimeconfig.cache
+C:\Users\niels\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
+C:\Users\niels\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\CostOverview.cshtml.g.cs

@@ -18,10 +18,16 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=happybridesdb;User Id=root;Password=x;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=X;";
             return new MySqlConnection(Connectionstring);
         }
 
+        public List<Vehicle> GetAll()
+        {
+            using var connection = Connect();
+            var vehicles = connection.Query<Vehicle>($@"SELECT * FROM Vehicle");
+            return vehicles.ToList();
+        }
 
         //User Functions (Register and Login)
         /// <summary>

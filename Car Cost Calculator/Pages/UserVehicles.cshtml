@@ -2,3 +2,11 @@
 @model Car_Cost_Calculator.Pages.UserVehiclesModel
 @{
 }
+
+@foreach (Vehicle vehicle in Model.Vehicles)
+{
+    <h1>-------------</h1>
+    <h1>@vehicle.Vehicle_Kind</h1>
+    <h1>@vehicle.Number_Plate</h1>
+    <h1>-------------</h1>
+}

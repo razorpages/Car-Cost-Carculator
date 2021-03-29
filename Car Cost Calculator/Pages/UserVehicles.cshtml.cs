@@ -9,6 +9,11 @@ namespace Car_Cost_Calculator.Pages
 {
     public class UserVehiclesModel : PageModel
     {
+        public IEnumerable<Vehicle> Vehicles 
+        {
+            get { return new CarCostRepository().GetAll(); }
+        }
+
         public void OnGet()
         {
         }

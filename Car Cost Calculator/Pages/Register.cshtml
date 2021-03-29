@@ -1,4 +1,106 @@
 ﻿@page
 @model Car_Cost_Calculator.Pages.RegisterModel
 @{
+    ViewData["Title"] = "Registreren";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+
+                <img style=" width: 75px; height: 105px;" src="~/Images/CarCostNavLogo.png">
+
+
+
+            </div>
+            <div class="col-sm-8 text-left">
+                <h2>Registreren</h2>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="column">
+                            <label for="naam">Naam*</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="mail">
+                                E-mailadres*<label>
+                                    <input type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="passw">Wachtwoord*</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox"
+                            <label for="nieuwsbrief">Ik meld bij aan voor de nieuwsbrief</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" value="1"
+                            <label for="nieuwsbrief">Klik op het vakje om te bevestigen dat je geen robot bent.*</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+                </div>
+                <p>*=Verplicht</p>
+                <p>Met het versturen van dit registratieformulier, gaat u automatisch akkoord met de <a href="/Privacy">Privacy voorwaarden</a>
+
+
+
+            </div>
+            <div class="col-sm-2 sidenav">
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+
+

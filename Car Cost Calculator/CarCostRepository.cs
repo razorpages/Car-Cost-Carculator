@@ -11,6 +11,7 @@ namespace Car_Cost_Calculator
     public class CarCostRepository
     {
         //All Dapper Code will be entered here.
+        public User user;
 
         /// <summary>
         /// Makes connection to the database
@@ -18,7 +19,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=happybridesdb;User Id=root;Password=x;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Tarantino.2;";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -29,11 +30,19 @@ namespace Car_Cost_Calculator
         /// </summary>
         /// <param name="user">Gets the input from the user</param>
         /// <returns>true</returns>
-        private bool Register(User user) 
+        public bool Register(User user) 
         {
             using var connection = Connect();
-            int numRowEffected = connection.Execute($@"INSERT INTO users(mail, full_name, password) VALUES(@mail, @full_name, @password);", user);
+            int numRowEffected = connection.Execute($@"INSERT INTO users(mail, full_name, password) VALUES(@mail, @full_name, @password);
+            SELECT * FROM users;", user);
             return numRowEffected == 1;
+        }
+
+        public List<User> GetAccounts()
+        {
+            using var connection = Connect();
+            var account = connection.Query<User>("SELECT * FROM users");
+            return account.ToList();
         }
 
         /// <summary>
@@ -87,6 +96,14 @@ namespace Car_Cost_Calculator
             var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle WHERE Account_ID = @inputid", new { inputid = inputID });
             return Items.ToList();
         }
+
+        public List<Vehicle> GetAllVehicles()
+        {
+            using var connection = Connect();
+            var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle");
+            return Items.ToList();
+        }
+
 
         /// <summary>
         /// Gets costs by Users

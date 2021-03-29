@@ -2,3 +2,28 @@
 @model Car_Cost_Calculator.Pages.UserVehiclesModel
 @{
 }
+<head>
+    <link rel="stylesheet" href="~/css/Navigation.css" type="text/css">
+</head>
+
+<h1 class="jumbotron">Your Vehicles:</h1>
+@foreach (var vehicle in @Model.vehicles)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">@vehicle.Vehicle_Kind </h3>
+                        <div class="card-block">
+                            <h4>Number Plate:@vehicle.Number_Plate</h4>
+                            <h4>KM Counter:@vehicle.Current_KM</h4>
+                            <h4>Date of Purchase:@vehicle.BuyDate</h4>
+                            <h4>Costs: €@vehicle.BuyCost</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

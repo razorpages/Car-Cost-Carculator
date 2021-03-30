@@ -9,10 +9,24 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/css/Navigation.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,35 +44,47 @@
             <div class="col-sm-8 text-left">
                 <h2>Inloggen</h2>
 
-            <form method="get" asp-page-handler="Login">
                 <div class="container">
                     <div class="row">
                         <div class="column">
-                            <label asp-for="vehicle.Account_ID" for="fname">E-mailadres</label>
-                            <span asp-validation-for="vehicle.Account_ID"></span>
+                            <label for="fname">E-mailadres*</label> <br>
                             <input type="text">
                         </div>
                     </div>
-                    @*<div class="row">
-                        <div class="column">
-                            <label asp-for="account.password" for="lname">Wachtwoord</label>
-                            <input type="text">
-                        </div>
-                    </div>*@
                     <div class="row">
                         <div class="column">
-                            <button class="btn btn-warning" asp-page="UserVehicles">Login</button>
+                            <label for="lname">Wachtwoord*</label> <br>
+                            <input type="text">
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="column">
+                            <input type="checkbox" />
+                            <label for="Sessie">Ingelogd blijven.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <a href='/CostInput'>Tijdelijke Login</a>
+                            <input type="submit" value="Submit">
+                            
+                        </div>
+                    </div>
+
+
+
                 </div>
-            </form>
+                <p>*=Verplicht</p>
+                <p>Met het versturen van dit registratieformulier, gaat u automatisch akkoord met de <a href="/Privacy">privacy voorwaarden</a>.</p>
 
 
             </div>
             <div class="col-sm-2 sidenav">
 
-
-              
+                <p>Handige Links:</p>
+                <p><a href="/Login">Login</a></p>
+                <p><a href="/Register">Registreren</a></p>
+                <p><a href="#">Uitloggen</a></p>
 
             </div>
         </div>

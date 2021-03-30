@@ -6,24 +6,82 @@
     <link rel="stylesheet" href="~/css/Navigation.css" type="text/css">
 </head>
 
-<h1 class="jumbotron">Your Vehicles:</h1>
-@foreach (var vehicle in @Model.vehicles)
-{
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h3 class="card-title text-center">@vehicle.Vehicle_Kind </h3>
-                        <div class="card-block">
-                            <h4>Number Plate:@vehicle.Number_Plate</h4>
-                            <h4>KM Counter:@vehicle.Current_KM</h4>
-                            <h4>Date of Purchase:@vehicle.BuyDate</h4>
-                            <h4>Costs: €@vehicle.BuyCost</h4>
-                        </div>
-                    </div>
+<h1 class="display-2">Your Vehicles:</h1>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Vehicle</th>
+            <th scope="col">Number_Plate</th>
+            <th scope="col">KM Counter</th>
+            <th scope="col">Date Of Purchase</th>
+            <th scope="col">Costs</th>
+            <th scope="col">Functions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in @Model.vehicles)
+        {
+        <tr>
+            <th scope="row">@vehicle.Vehicle_Kind</th>
+            <td>@vehicle.Number_Plate</td>
+            <td>@vehicle.Current_KM</td>
+            <td>@vehicle.BuyDate</td>
+            <td>@vehicle.BuyCost</td>
+
+            <td>
+                <form method="post">
+                    <button class="btn btn-outline-light" type="submit" asp-page="UpdateVehicle"  asp-page-handler="Edit"  asp-route-VehicleID="@vehicle.Number_Plate">Edit</button>
+                    <button class="btn btn-outline-light" type="submit"  asp-page-handler="Delete" asp-route-VehicleID="@vehicle.Number_Plate">Delete</button>
+                </form>
+            </td>
+
+        </tr>
+        }
+
+    <form method="post" asp-page-handler="Add">
+        <tr>
+            <th scope="row">
+                <div class="form-group">
+                    <input type="text" asp-for="vehicle.Vehicle_Kind" class="form-control">
+                    <span asp-validation-for="vehicle.Vehicle_Kind"></span>
                 </div>
-            </div>
-        </div>
-    </div>
-}
+            </th>
+            <td>
+                <div class="form-group">
+                    <input type="text" asp-for="vehicle.Number_Plate" class="form-control">
+                    <span asp-validation-for="vehicle.Number_Plate"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" asp-for="vehicle.Current_KM" class="form-control">
+                    <span asp-validation-for="vehicle.Current_KM"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" asp-for="vehicle.BuyDate" class="form-control">
+                    <span asp-validation-for="vehicle.BuyDate"></span>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" asp-for="vehicle.BuyCost" class="form-control">
+                    <span asp-validation-for="vehicle.BuyCost"></span>
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    <button class="btn btn-outline-light">+ Add</button>
+                </div>
+            </td>
+            <td>
+                <input type="hidden" asp-for="vehicle.Account_ID">
+            </td>
+        </tr>
+    </form>
+
+    </tbody>
+</table>

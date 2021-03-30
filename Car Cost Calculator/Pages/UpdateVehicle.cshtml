@@ -2,3 +2,42 @@
 @model Car_Cost_Calculator.Pages.UpdateVehicleModel
 @{
 }
+<h1 class="display-2">Edit</h1>
+
+<form method="post" asp-page-handler="Update">
+
+    <div class="form-group">
+        <label>Vehicle Name:</label>
+        <input type="text" asp-for="vehicle.Vehicle_Kind" class="form-control">
+        <span asp-validation-for="vehicle.Vehicle_Kind"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Number Plate:</label>
+        <input type="text" asp-for="vehicle.Number_Plate" class="form-control">
+        <span asp-validation-for="vehicle.Number_Plate"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Distance Counter:</label>
+        <input type="text" asp-for="vehicle.Current_KM" class="form-control">
+        <span asp-validation-for="vehicle.Current_KM"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Date of Purchase :</label>
+        <input type="text" asp-for="vehicle.BuyDate" class="form-control">
+        <span asp-validation-for="vehicle.BuyDate"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Vehicle Pricing:</label>
+        <input type="text" asp-for="vehicle.BuyCost" class="form-control">
+        <span asp-validation-for="vehicle.BuyCost"></span>
+    </div>
+    <input type="hidden" asp-for="vehicle.Account_ID">
+
+    <div class="form-group">
+        <button class="btn btn-outline-dark">Update</button>
+    </div>
+</form>

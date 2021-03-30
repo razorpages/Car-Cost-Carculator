@@ -33,8 +33,9 @@ namespace Car_Cost_Calculator
         public bool Register(User user) 
         {
             using var connection = Connect();
-            int numRowEffected = connection.Execute($@"INSERT INTO users(mail, full_name, password) VALUES(@mail, @full_name, @password);
-            SELECT * FROM users;", user);
+            int numRowEffected = connection.Execute($@"INSERT INTO users(mail, full_name, password) 
+                                                    VALUES(@mail, @full_name, @password);
+                                                    SELECT * FROM users;", user);
             return numRowEffected == 1;
         }
 
@@ -53,7 +54,8 @@ namespace Car_Cost_Calculator
         public List<User> Login(User user) 
         {
             using var connection = Connect();
-            var Login = connection.Query<User>($@"SELECT mail FROM users WHERE mail = @mail AND password = @password;");
+            var Login = connection.Query<User>($@"SELECT mail FROM users 
+                                               WHERE mail = @mail AND password = @password;");
             return Login.ToList();
         }
 
@@ -67,7 +69,8 @@ namespace Car_Cost_Calculator
         {
             using var connection = Connect();
             connection.Query<Vehicle>(
-            $@"INSERT INTO Vehicle(Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost) VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);", vehicle);
+            @"INSERT INTO Vehicle(Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost)
+            VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);", vehicle);
             return null;
         }
 
@@ -80,7 +83,8 @@ namespace Car_Cost_Calculator
         {
             using var connection = Connect();
             connection.Query<Costs>(
-            $@"INSERT INTO costs(Cost_Name, Cost_Amount, Cost_Date, Vehicle_Cost) VALUES (@Cost_Name, @Cost_Amount, @Cost_Date, @Vehicle_Cost);", costs);
+            $@"INSERT INTO costs(Cost_Name, Cost_Amount, Cost_Date, Vehicle_Cost) 
+            VALUES (@Cost_Name, @Cost_Amount, @Cost_Date, @Vehicle_Cost);", costs);
             return null;
         }
 
@@ -93,7 +97,8 @@ namespace Car_Cost_Calculator
         public List<Vehicle> GetVehiclesByID(string inputID) 
         {
             using var connection = Connect();
-            var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle WHERE Account_ID = @inputid", new { inputid = inputID });
+            var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle 
+                                                  WHERE Account_ID = @inputid", new { inputid = inputID });
             return Items.ToList();
         }
 
@@ -129,7 +134,9 @@ namespace Car_Cost_Calculator
         {
             using var connection = Connect();
             var ItemUpdate = connection.QuerySingleOrDefault<Costs>(
-                $@"UPDATE costs SET Cost_ID = @Cost_ID, Cost_Name = @Cost_Name, Cost_Amount = @Cost_Amount, Cost_Date = @Cost_Date, Vehicle_Cost = Vehicle_Cost = @Vehicle_Cost WHERE Cost_ID = @Cost_ID", cost);
+                $@"UPDATE costs 
+                SET Cost_ID = @Cost_ID, Cost_Name = @Cost_Name, Cost_Amount = @Cost_Amount, Cost_Date = @Cost_Date, Vehicle_Cost = Vehicle_Cost = @Vehicle_Cost
+                WHERE Cost_ID = @Cost_ID", cost);
             return ItemUpdate;
         }
 
@@ -142,7 +149,9 @@ namespace Car_Cost_Calculator
         {
             using var connection = Connect();
             var ItemUpdate = connection.QuerySingleOrDefault<Vehicle>(
-                $@"UPDATE Vehicle SET Number_Plate = @Number_Plate, Vehicle_Kind = @Vehicle_Kind, Account_ID = @Account_ID, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost", vehicle);
+                $@"UPDATE Vehicle SET Number_Plate = @Number_Plate, Vehicle_Kind = @Vehicle_Kind, Account_ID = @Account_ID, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
+                WHERE Number_Plate = @Number_Plate;"
+                , vehicle);
             return ItemUpdate;
         }
 

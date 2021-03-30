@@ -26,7 +26,7 @@ namespace Car_Cost_Calculator.Pages
             if (ModelState.IsValid)
             {
                 var Register = new CarCostRepository().Register(user);
-                return RedirectToPage("MyAccount");
+                return RedirectToPage("UserVehicles");
             }
             return Page();
         }

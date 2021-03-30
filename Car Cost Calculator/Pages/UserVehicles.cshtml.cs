@@ -42,5 +42,20 @@ namespace Car_Cost_Calculator.Pages
             }
             return Page();
         }
+
+        public IActionResult OnPostAdd() 
+        {
+            if (ModelState.IsValid) 
+            {
+                var AddVehicle = new CarCostRepository().VehicleAdd(vehicle);
+                return Page();
+            }
+            return Page();
+        }
+
+        public void OnPostDelete()
+        {
+            var AddRepository = new CarCostRepository().DeleteVehicle(vehicle.Number_Plate);
+        }
     }
 }

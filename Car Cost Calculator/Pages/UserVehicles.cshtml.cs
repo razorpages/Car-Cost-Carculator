@@ -22,9 +22,9 @@ namespace Car_Cost_Calculator.Pages
 
         public IEnumerable<Vehicle> vehicles
         {
-            get { return new CarCostRepository().GetAllVehicles(); }
+            //get { return new CarCostRepository().GetAllVehicles(); }
 
-            //get { return new CarCostRepository().GetVehiclesByID(vehicle.Account_ID); }
+            get { return new CarCostRepository().GetVehiclesByID(vehicle.Account_ID); }
         }
 
         public IEnumerable<User> Accounts
@@ -37,8 +37,8 @@ namespace Car_Cost_Calculator.Pages
         {
             if (ModelState.IsValid)
             {
-                var AddRepository = new CarCostRepository().GetAllVehicles();
-                //var AddRepository = new CarCostRepository().GetVehiclesByID(vehicle.Account_ID);
+               // var AddRepository = new CarCostRepository().GetAllVehicles();
+                var ReadRepository = new CarCostRepository().GetVehiclesByID(vehicle.Account_ID);
             }
             return Page();
         }

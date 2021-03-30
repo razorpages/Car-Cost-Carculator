@@ -47,13 +47,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="column">
-                            <label for="fname">E-mailadres*</label> <br>
-                            <input type="text">
+                            <label>E-mailadres*</label> <br>
+                            <input asp-for="account.mail" type="text">
                         </div>
                     </div>
                     <div class="row">
                         <div class="column">
-                            <label for="lname">Wachtwoord*</label> <br>
+                      @*      <label for="lname">Wachtwoord*</label> <br>*@
                             <input type="text">
                         </div>
                     </div>
@@ -67,7 +67,6 @@
                         <div class="column">
                             <a href='/CostInput'>Tijdelijke Login</a>
                             <input type="submit" value="Submit">
-                            
                         </div>
                     </div>
 

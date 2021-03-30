@@ -23,7 +23,7 @@
         @foreach (var vehicle in @Model.vehicles)
         {
         <tr>
-            <th scope="row">@vehicle.Vehicle_Kind</th>
+            <th scope="row"><a href="CostInput">@vehicle.Vehicle_Kind</a></th>
             <td>@vehicle.Number_Plate</td>
             <td>@vehicle.Current_KM</td>
             <td>@vehicle.BuyDate</td>
@@ -31,8 +31,8 @@
 
             <td>
                 <form method="post">
-                    <button class="btn btn-outline-light" type="submit" asp-page="UpdateVehicle"  asp-page-handler="Edit"  asp-route-VehicleID="@vehicle.Number_Plate">Edit</button>
-                    <button class="btn btn-outline-light" type="submit"  asp-page-handler="Delete" asp-route-VehicleID="@vehicle.Number_Plate">Delete</button>
+                    <button class="btn btn-outline-light" type="submit" asp-page="UpdateVehicle" asp-page-handler="Edit" asp-route-VehicleID="@vehicle.Number_Plate">Edit</button>
+                    <button class="btn btn-outline-light" type="submit" asp-page-handler="Delete" asp-route-VehicleID="@vehicle.Number_Plate">Delete</button>
                 </form>
             </td>
 

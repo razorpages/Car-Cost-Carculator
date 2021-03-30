@@ -342,3 +342,118 @@ C:\Users\niels\OneDrive\Documenten\GitHub\CarCost\Car-Cost-Carculator\Car Cost C
 C:\Users\niels\OneDrive\Documenten\GitHub\CarCost\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.genruntimeconfig.cache
 C:\Users\niels\OneDrive\Documenten\GitHub\CarCost\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\CostInput.cshtml.g.cs
 C:\Users\kevin\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\CostInput.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\appsettings.json
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.StaticWebAssets.xml
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.exe
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.deps.json
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.runtimeconfig.json
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.runtimeconfig.dev.json
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.pdb
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.Views.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Car Cost Calculator.Views.pdb
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.csprojAssemblyReference.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.AssemblyInfoInputs.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.AssemblyInfo.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.csproj.CoreCompileInputs.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.MvcApplicationPartsAssemblyInfo.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.MvcApplicationPartsAssemblyInfo.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.RazorAssemblyInfo.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.RazorAssemblyInfo.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\staticwebassets\Car Cost Calculator.StaticWebAssets.Manifest.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\staticwebassets\Car Cost Calculator.StaticWebAssets.xml
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\scopedcss\bundle\Car Cost Calculator.styles.css
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.TagHelpers.input.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.TagHelpers.output.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.RazorCoreGenerate.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\CostInput.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\CostOverview.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Instructions.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\MyAccount.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Register.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_LoginPartial.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateAccount.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateCosts.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\UpdateVehicle.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\UserVehicles.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\VehicleCosts.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.RazorTargetAssemblyInfo.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.RazorTargetAssemblyInfo.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.Views.pdb
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.csproj.CopyComplete
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.dll
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.pdb
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.genruntimeconfig.cache

@@ -9,8 +9,21 @@ namespace Car_Cost_Calculator.Pages
 {
     public class UpdateVehicleModel : PageModel
     {
+        [BindProperty]
+        public Vehicle vehicle { get; set; }
         public void OnGet()
         {
+        }
+
+        public IActionResult OnPostUpdate()
+        {
+            if (ModelState.IsValid)
+            {
+                new CarCostRepository().UpdateVehicle(vehicle);
+                var AddRepository = new CarCostRepository().GetAllVehicles();
+                return RedirectToPage("UserVehicles");
+            }
+            return Page();
         }
     }
 }

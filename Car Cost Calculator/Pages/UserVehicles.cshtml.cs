@@ -15,16 +15,16 @@ namespace Car_Cost_Calculator.Pages
         [BindProperty(SupportsGet = true)]
         public Vehicle vehicle { get; set; }
 
-        public void OnGet()
+        public void OnGet(string email)
         {
-          
+            //var GetVehicles = new CarCostRepository().GetVehiclesByID(user.mail);
         }
 
         public IEnumerable<Vehicle> vehicles
         {
             //get { return new CarCostRepository().GetAllVehicles(); }
 
-            get { return new CarCostRepository().GetVehiclesByID(vehicle.Account_ID); }
+            get { return new CarCostRepository().GetVehiclesByNameOnly(user.mail); }
         }
 
         public IEnumerable<User> Accounts
@@ -33,15 +33,9 @@ namespace Car_Cost_Calculator.Pages
         }
 
 
-        public IActionResult OnGetUserItems()
-        {
-            if (ModelState.IsValid)
-            {
-               // var AddRepository = new CarCostRepository().GetAllVehicles();
-                var ReadRepository = new CarCostRepository().GetVehiclesByID(vehicle.Account_ID);
-            }
-            return Page();
-        }
+
+
+        //CRUD
 
         public IActionResult OnPostAdd() 
         {

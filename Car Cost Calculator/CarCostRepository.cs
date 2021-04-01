@@ -11,7 +11,7 @@ namespace Car_Cost_Calculator
     public class CarCostRepository
     {
         //All Dapper Code will be entered here.
-        public User user;
+        public User user { get; set; }
 
         /// <summary>
         /// Makes connection to the database
@@ -19,7 +19,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Tarantino.2;";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -51,12 +51,11 @@ namespace Car_Cost_Calculator
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public List<User> Login(User user) 
+        public IEnumerable<User> Login(User user)
         {
             using var connection = Connect();
-            var Login = connection.Query<User>($@"SELECT mail FROM users 
-                                               WHERE mail = @mail AND password = @password;");
-            return Login.ToList();
+            var Login = connection.Query<User>($@"SELECT * FROM users WHERE mail = @mail AND password = @password;", new { mail = user.mail, password = user.password });
+            return Login;
         }
 
         //CREATE
@@ -68,10 +67,12 @@ namespace Car_Cost_Calculator
         public Vehicle VehicleAdd(Vehicle vehicle)
         {
             using var connection = Connect();
-            connection.Query<Vehicle>(
-            @"INSERT INTO Vehicle(Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost)
-            VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);", vehicle);
-            return null;
+            Vehicle addVehicle = connection.QueryFirstOrDefault<Vehicle>(
+            $@"INSERT INTO Vehicle(
+            Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost)
+            VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);"
+            , vehicle);
+            return addVehicle;
         }
 
         /// <summary>
@@ -92,13 +93,24 @@ namespace Car_Cost_Calculator
         /// <summary>
         /// Gets vehicles by Users
         /// </summary>
-        /// <param name="inputID">Unique Account ID</param>
         /// <returns>List of All Vehicles from the designated user</returns>
-        public List<Vehicle> GetVehiclesByID(string inputID) 
+        public List<Vehicle> GetVehiclesByID(string email, string Password) //inputID = email input from user
         {
             using var connection = Connect();
-            var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle 
-                                                  WHERE Account_ID = @inputid", new { inputid = inputID });
+            var Items = connection.Query<Vehicle>(
+            $@"SELECT * FROM Vehicle WHERE Account_ID = @mail AND password = @password;",
+            new { mail = email, password = Password });
+
+            return Items.ToList();
+        }
+
+        public List<Vehicle> GetVehiclesByNameOnly(string email) //inputID = email input from user
+        {
+            using var connection = Connect();
+            var Items = connection.Query<Vehicle>(
+            $@"SELECT * FROM Vehicle WHERE Account_ID = @mail",
+            new { mail = email});
+
             return Items.ToList();
         }
 
@@ -149,7 +161,8 @@ namespace Car_Cost_Calculator
         {
             using var connection = Connect();
             var ItemUpdate = connection.QuerySingleOrDefault<Vehicle>(
-                $@"UPDATE Vehicle SET Number_Plate = @Number_Plate, Vehicle_Kind = @Vehicle_Kind, Account_ID = @Account_ID, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
+                $@"UPDATE Vehicle
+                SET Vehicle_Kind = @Vehicle_Kind, Account_ID = @Account_ID, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
                 WHERE Number_Plate = @Number_Plate;"
                 , vehicle);
             return ItemUpdate;

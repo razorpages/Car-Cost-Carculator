@@ -20,7 +20,7 @@ namespace Car_Cost_Calculator.Pages
 
         public IEnumerable<Vehicle> Vehicles
         {
-            get { return new CarCostRepository().GetVehiclesByID(Vehicle.Account_ID); }
+            get { return new CarCostRepository().GetVehiclesByID(user.mail, user.password); }
         }
 
     }

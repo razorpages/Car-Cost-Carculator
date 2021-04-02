@@ -19,12 +19,13 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Tarantino.2;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=;";
             return new MySqlConnection(Connectionstring);
         }
 
 
         //User Functions (Register and Login)
+
         /// <summary>
         /// Adds account to the database
         /// </summary>
@@ -97,21 +98,14 @@ namespace Car_Cost_Calculator
         public List<Vehicle> GetVehiclesByID(string email, string Password) //inputID = email input from user
         {
             using var connection = Connect();
-            var Items = connection.Query<Vehicle>(
-            $@"SELECT * FROM Vehicle WHERE Account_ID = @mail AND password = @password;",
-            new { mail = email, password = Password });
-
-            return Items.ToList();
-        }
-
-        public List<Vehicle> GetVehiclesByNameOnly(string email) //inputID = email input from user
-        {
-            using var connection = Connect();
-            var Items = connection.Query<Vehicle>(
-            $@"SELECT * FROM Vehicle WHERE Account_ID = @mail",
-            new { mail = email});
-
-            return Items.ToList();
+            var MyVehicles = connection.Query<Vehicle>(
+            $@"SELECT * 
+            FROM Vehicle
+            INNER JOIN users
+            ON users.mail = Vehicle.Account_ID
+            WHERE users.mail = @mail AND users.password = @password;
+            ",new { mail = email, password = Password });
+            return MyVehicles.ToList();
         }
 
         public List<Vehicle> GetAllVehicles()

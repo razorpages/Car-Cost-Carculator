@@ -24,7 +24,7 @@ namespace Car_Cost_Calculator.Pages
         {
             //get { return new CarCostRepository().GetAllVehicles(); }
 
-            get { return new CarCostRepository().GetVehiclesByNameOnly(user.mail); }
+            get { return new CarCostRepository().GetVehiclesByID(user.mail, user.password); }
         }
 
         public IEnumerable<User> Accounts

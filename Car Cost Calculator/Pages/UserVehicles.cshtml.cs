@@ -33,8 +33,6 @@ namespace Car_Cost_Calculator.Pages
         }
 
 
-
-
         //CRUD
 
         public IActionResult OnPostAdd() 

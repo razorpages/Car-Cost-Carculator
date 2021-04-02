@@ -47,6 +47,22 @@ namespace Car_Cost_Calculator.Pages
             return Page();
         }
 
+        public IActionResult OnPostCheckLogin() 
+        {  
+                var checkexist = new CarCostRepository().CheckAccountLogin(user);
+                if (checkexist == true)
+                {
+                    ///TODO Sessions
+                    return RedirectToPage("UserVehicles");
+                }
+                else 
+                {
+                    ModelState.AddModelError("Error", " User does not exist, or incorrect input. ");
+                }
+
+            return Page();
+        }
+
         public void SetSession()
         {
             HttpContext.Session.SetString("email", user.mail);

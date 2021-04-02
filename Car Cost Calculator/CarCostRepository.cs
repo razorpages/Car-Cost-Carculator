@@ -19,7 +19,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -59,6 +59,44 @@ namespace Car_Cost_Calculator
             return Login;
         }
 
+        /// <summary>
+        /// Checks whether a record exists of the same e-mail
+        /// </summary>
+        /// <param name="userscheck">Class User</param>
+        /// <returns>if a record exists, return true(1). if not, return false(0)</returns>
+        public bool CheckAccountExist(User userscheck) 
+        {
+            using var connection = Connect();
+            int accExist = connection.ExecuteScalar<int>(
+            $@"SELECT COUNT(1) FROM users WHERE mail =  @mail",
+            new { mail = userscheck.mail });
+            if (accExist == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Validates Login Information
+        /// </summary>
+        /// <param name="users"></param>
+        /// <returns>true if information matches, if not then false</returns>
+        public bool CheckAccountLogin(User users) 
+        {
+            using var connection = Connect();
+            User userCheck = connection.QuerySingleOrDefault<User>(
+                $@"SELECT * FROM users WHERE mail = @mail AND password = @password"
+                , new { mail = users.mail, password = users.password });
+            if (userCheck != null) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
         //CREATE
         /// <summary>
         /// Query To add Vehicle to the Database
@@ -72,7 +110,17 @@ namespace Car_Cost_Calculator
             $@"INSERT INTO Vehicle(
             Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost)
             VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);"
-            , vehicle);
+            ,new
+            {
+                Number_Plate = vehicle.Number_Plate,
+                Vehicle_Kind = vehicle.Vehicle_Kind,
+                Account_ID = vehicle.Account_ID,
+                Current_KM = vehicle.Current_KM,
+                BuyDate = vehicle.BuyDate,
+                BuyCost = vehicle.BuyCost
+            });
+            
+
             return addVehicle;
         }
 

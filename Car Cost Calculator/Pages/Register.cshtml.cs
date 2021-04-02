@@ -25,8 +25,17 @@ namespace Car_Cost_Calculator.Pages
         {
             if (ModelState.IsValid)
             {
-                var Register = new CarCostRepository().Register(user);
-                return RedirectToPage("UserVehicles");
+                var existcheck = new CarCostRepository().CheckAccountExist(user);
+                if (existcheck == false)
+                {
+                    var Register = new CarCostRepository().Register(user);
+                    return RedirectToPage("UserVehicles");
+                }
+                else 
+                {
+                    ModelState.AddModelError("Error", "Email is already in use.");
+                }
+
             }
             return Page();
         }

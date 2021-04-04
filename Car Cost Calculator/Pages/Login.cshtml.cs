@@ -22,6 +22,7 @@ namespace Car_Cost_Calculator.Pages
 
         public void OnGet()
         {
+            HttpContext.Session.Remove("email");
         }
 
         public IEnumerable<User> Accounts
@@ -33,26 +34,14 @@ namespace Car_Cost_Calculator.Pages
             get { return new CarCostRepository().GetVehiclesByID(user.mail, user.password); }
         }
 
-        public IActionResult OnPostLogin(string action = "")
-        {
-            if (ModelState.IsValid)
-            {
-                var ToVehicles = new CarCostRepository().GetVehiclesByID(user.mail, user.password);
-                if (action == "Login")
-                {
-                    SetSession();
-                }
-                //return RedirectToPage("UserVehicles");
-            }
-            return Page();
-        }
 
         public IActionResult OnPostCheckLogin() 
         {  
                 var checkexist = new CarCostRepository().CheckAccountLogin(user);
+
                 if (checkexist == true)
                 {
-                    ///TODO Sessions
+                    SetSession();
                     return RedirectToPage("UserVehicles");
                 }
                 else 
@@ -66,7 +55,7 @@ namespace Car_Cost_Calculator.Pages
         public void SetSession()
         {
             HttpContext.Session.SetString("email", user.mail);
-            HttpContext.Session.SetString("Password", user.password);
+            HttpContext.Session.SetString("password", user.password);
         }
 
         //Controleer de waarde in alle andere pagina's

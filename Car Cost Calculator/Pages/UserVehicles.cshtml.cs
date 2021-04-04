@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -15,16 +16,17 @@ namespace Car_Cost_Calculator.Pages
         [BindProperty(SupportsGet = true)]
         public Vehicle vehicle { get; set; }
 
-        public void OnGet(string email)
+        public void OnGet()
         {
-            //var GetVehicles = new CarCostRepository().GetVehiclesByID(user.mail);
+            var usermail = HttpContext.Session.GetString("email");
+            var password = HttpContext.Session.GetString("password");
         }
 
         public IEnumerable<Vehicle> vehicles
         {
             //get { return new CarCostRepository().GetAllVehicles(); }
 
-            get { return new CarCostRepository().GetVehiclesByID(user.mail, user.password); }
+            get { return new CarCostRepository().GetVehiclesByID(HttpContext.Session.GetString("email"), HttpContext.Session.GetString("password")); }
         }
 
         public IEnumerable<User> Accounts
@@ -39,8 +41,8 @@ namespace Car_Cost_Calculator.Pages
         {
             if (ModelState.IsValid) 
             {
+                user.mail = vehicle.Account_ID;
                 var AddVehicle = new CarCostRepository().VehicleAdd(vehicle);
-                return Page();
             }
             return Page();
         }

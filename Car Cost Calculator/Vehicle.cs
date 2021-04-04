@@ -20,13 +20,15 @@ namespace Car_Cost_Calculator
         [BindProperty]
         public string Account_ID { get; set; }
 
+        [Required(ErrorMessage = "Please enter the value shown on your odometer.")]
         [BindProperty]
         public int Current_KM { get; set; }
 
+        [Required(ErrorMessage = "Please enter your date of Purchase.")]
         [BindProperty]
         public DateTime BuyDate { get; set; }
 
-        [Required()]
+        [Required(ErrorMessage = "Please enter the cost of your car.")]
         [BindProperty]
         public double BuyCost { get; set; }
     }

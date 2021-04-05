@@ -31,14 +31,24 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
+                                <!--verander maand/kwartaal naar tank/overige kosten-->
+                                <!--splits kosten op, verander kostnamen en geef namenveld voor kosten-->
+                                <!--maak datumveld-->
+                                <!--eventueel ook specefiek voertuig aanwijzen? Href?-->
+                                <!--kijk naar my vehichles-->
+                                <!--splits kost op in 2 soorten-->
                                 <div class="col-md-12">
-                                    <div class="btn-group"><a href="#" class="btn btn-secondary" role:"button">Maand</a> <a href="#" class="btn btn-warning" role:"button">Kwartaal</a> </div>
+                                    <div class="btn-group"><a href="#" class="btn btn-secondary" role:"button">Tank-Kosten</a> <a href="#" class="btn btn-warning" role:"button">Auto-kosten</a> </div>
                                     <form class="" id="costform">
                                         <div class="form-group"> <label>Brandstof kosten</label> <input type="number" class="form-control" placeholder="€"> </div>
-                                        <div class="form-group"> <label>Wegenbelasting kosten</label> <input type="number" class="form-control" placeholder="€"> </div>
-                                        <div class="form-group"> <label>Verzekeringskosten</label> <input type="number" class="form-control" placeholder="€"> </div>
-                                        <div class="form-group"> <label>Overige kosten</label> <input type="number" class="form-control" placeholder="€"> </div>
-                                        <div class="form-group"> <label id="total">Totaal</label> <input type="number" class="form-control" placeholder="€"> </div>
+                                        <div class="form-group"> <label>Kilometers gereden</label> <input type="number" class="form-control" placeholder="Gereden kilometers na tankbeurt"> </div>
+                                        <div class="form-group"> <label>Datum tankbeurt</label> <input type="date" class="form-control" placeholder="01-01-2000"> </div>
+                                        @*<div class="form-group"> <label>Wegenbelasting kosten</label> <input type="number" class="form-control" placeholder="€"> </div>
+        <div class="form-group"> <label>Verzekeringskosten</label> <input type="number" class="form-control" placeholder="€"> </div>*@
+                                        <div class="form-group"> <label>Soort kost</label> <input class="form-control" placeholder="Soort kost"> </div>
+                                        <div class="form-group"> <label>Uitgave</label> <input type="number" class="form-control" placeholder="€"> </div>
+                                        <div class="form-group"> <label>Datum kostenpost</label> <input type="date" class="form-control" placeholder="01-01-2000"> </div>
+                                        @*<div class="form-group"> <label id="total">Totaal</label> <input type="number" class="form-control" placeholder="€"> </div>*@
                                         <button type="submit" class="btn btn-secondary" role:"button">Submit</button>
                                     </form>
                                     <button class="btn btn-outline-dark">My Vehicles</button>

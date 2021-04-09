@@ -5,7 +5,7 @@
 <h1 class="display-2">Edit</h1>
 
 <form method="post" asp-page-handler="Update">
-
+    <input type="hidden" asp-for="vehicle.Account_ID">
     <div class="form-group">
         <h1>@Model.vehicle.Number_Plate</h1>
         <label>Vehicle Name:</label>
@@ -36,7 +36,7 @@
         <input type="text" asp-for="vehicle.BuyCost" class="form-control">
         <span asp-validation-for="vehicle.BuyCost"></span>
     </div>
-    <input type="hidden" asp-for="vehicle.Account_ID">
+    
 
     <div class="form-group">
         <button class="btn btn-outline-dark">Update</button>

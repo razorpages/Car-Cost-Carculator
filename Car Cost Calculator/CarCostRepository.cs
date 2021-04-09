@@ -19,7 +19,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=NOTPassword;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=;";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -118,7 +118,6 @@ namespace Car_Cost_Calculator
                 BuyDate = vehicle.BuyDate,
                 BuyCost = vehicle.BuyCost
             });
-            
 
             return addVehicle;
         }
@@ -203,9 +202,14 @@ namespace Car_Cost_Calculator
             using var connection = Connect();
             var ItemUpdate = connection.QuerySingleOrDefault<Vehicle>(
                 $@"UPDATE Vehicle
-                SET Vehicle_Kind = @Vehicle_Kind, Account_ID = @Account_ID, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
-                WHERE Number_Plate = @Number_Plate;"
-                , vehicle);
+                SET Vehicle_Kind = @Vehicle_Kind, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
+                WHERE Number_Plate = @Number_Plate;", vehicle);
+                //new {
+                //Vehicle_Kind = vehicle.Vehicle_Kind,
+                //Current_KM = vehicle.Current_KM,
+                //BuyDate = vehicle.BuyDate,
+                //BuyCost = vehicle.BuyCost
+                //});
             return ItemUpdate;
         }
 

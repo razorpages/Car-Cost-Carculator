@@ -13,6 +13,7 @@
 <h1 class="display-2">Your Vehicles:</h1>
 
 <table class="table table-striped table-dark">
+
     <thead>
         <tr>
             <th scope="col">Vehicle</th>
@@ -23,6 +24,7 @@
             <th scope="col">Functions</th>
         </tr>
     </thead>
+
     <tbody>
         @foreach (var vehicle in @Model.vehicles)
         {
@@ -35,8 +37,10 @@
 
             <td>
                 <form method="post">
-                    <button class="btn btn-outline-light" type="submit" asp-page="UpdateVehicle" asp-page-handler="Edit" asp-route-VehicleID="@vehicle.Number_Plate">Edit</button>
-                    <button class="btn btn-outline-light" type="submit" asp-page-handler="Delete" asp-route-VehicleID="@vehicle.Number_Plate">Delete</button>
+                    <button class="btn btn-outline-light" asp-page="UpdateVehicle" asp-route-numberPlate="@vehicle.Number_Plate">Edit</button>
+                </form>
+                <form method="post" asp-page-handler="Delete" asp-route-numberPlate="@vehicle.Number_Plate">
+                    <button class="btn btn-outline-light" type="submit" >Delete</button>
                 </form>
             </td>
 
@@ -44,6 +48,7 @@
         }
 
     <form method="post" asp-page-handler="Add">
+
         <tr>
             <th scope="row">
                 <div class="form-group">
@@ -80,9 +85,6 @@
                 <div class="form-group">
                     <button class="btn btn-outline-light">+ Add</button>
                 </div>
-            </td>
-            <td>
-                <input type="hidden" asp-for="vehicle.Account_ID"><span asp-validation-for="vehicle.Account_ID"></span>
             </td>
         </tr>
     </form>

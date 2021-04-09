@@ -57,9 +57,6 @@ namespace Car_Cost_Calculator.Pages
             HttpContext.Session.SetString("email", user.mail);
             HttpContext.Session.SetString("password", user.password);
         }
-
-        //Controleer de waarde in alle andere pagina's
-        //Zet alle waardes in login
     }
 
 }

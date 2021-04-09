@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Car_Cost_Calculator.Pages
@@ -29,6 +30,7 @@ namespace Car_Cost_Calculator.Pages
                 if (existcheck == false)
                 {
                     var Register = new CarCostRepository().Register(user);
+                    SetSession();
                     return RedirectToPage("UserVehicles");
                 }
                 else 
@@ -38,6 +40,12 @@ namespace Car_Cost_Calculator.Pages
 
             }
             return Page();
+        }
+
+        public void SetSession() 
+        {
+            HttpContext.Session.SetString("email", user.mail );
+            HttpContext.Session.SetString("password", user.password );
         }
     }
 }

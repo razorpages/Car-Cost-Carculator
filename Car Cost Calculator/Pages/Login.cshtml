@@ -26,9 +26,11 @@
 
             <div class="col-sm-8 text-left">
                 <h2>Inloggen</h2>
+                <div asp-validation-summary="All"></div>
+                <form method="post" asp-page-handler="CheckLogin">
 
-                <form method="post" asp-page-handler="Login">
                     <div class="container">
+
                         <div class="row">
                             <div class="column">
                                 <label>E-mailadres*</label> <br>
@@ -36,25 +38,29 @@
                                 <span asp-validation-for="user.mail"></span>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
-                                <label >Wachtwoord*</label> <br>
+                                <label>Wachtwoord*</label> <br>
                                 <input asp-for="user.password" type="password">
                                 <span asp-validation-for="user.password"></span>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
                                 <input type="checkbox" />
                                 <label for="Sessie">Ingelogd blijven.</label>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
                                 <a href='/CostInput'>Tijdelijke Login</a>
-                                <button name="action" value="Login" class="btn btn-dark" asp-page="UserVehicles">Login</button>
+                                <button name="action" value="Login" class="btn btn-dark">Login</button>
                             </div>
                         </div>
+
                     </div>
                 </form>
 

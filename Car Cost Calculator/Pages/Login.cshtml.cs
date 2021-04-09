@@ -15,13 +15,9 @@ namespace Car_Cost_Calculator.Pages
         [BindProperty(SupportsGet = true)]
         public User user { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public Vehicle vehicle { get; set; }
-
-
-
         public void OnGet()
         {
+            HttpContext.Session.Remove("email");
         }
 
         public IEnumerable<User> Accounts
@@ -33,28 +29,29 @@ namespace Car_Cost_Calculator.Pages
             get { return new CarCostRepository().GetVehiclesByID(user.mail, user.password); }
         }
 
-        public IActionResult OnPostLogin(string action = "")
-        {
-            if (ModelState.IsValid)
-            {
-                var ToVehicles = new CarCostRepository().GetVehiclesByID(user.mail, user.password);
-                if (action == "Login")
+
+        public IActionResult OnPostCheckLogin() 
+        {  
+                var checkexist = new CarCostRepository().CheckAccountLogin(user);
+
+                if (checkexist == true)
                 {
                     SetSession();
+                    return RedirectToPage("UserVehicles");
                 }
-                //return RedirectToPage("UserVehicles");
-            }
+                else 
+                {
+                    ModelState.AddModelError("Error", " User does not exist, or incorrect input. ");
+                }
+
             return Page();
         }
 
         public void SetSession()
         {
             HttpContext.Session.SetString("email", user.mail);
-            HttpContext.Session.SetString("Password", user.password);
+            HttpContext.Session.SetString("password", user.password);
         }
-
-        //Controleer de waarde in alle andere pagina's
-        //Zet alle waardes in login
     }
 
 }

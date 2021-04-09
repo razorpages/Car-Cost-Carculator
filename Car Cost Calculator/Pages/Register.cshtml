@@ -43,52 +43,57 @@
             </div>
             <div class="col-sm-8 text-left">
                 <h2>Registreren</h2>
-                <form method="post" asp-page-handler="Register">
 
+                <div asp-validation-summary="All"></div>
+                <form method="post" asp-page-handler="Register">
 
                     <div class="container">
                         <div class="row">
                             <div class="column">
                                 <label>Naam*</label> <br>
                                 <input asp-for="user.full_name" type="text">
-                                <span asp-validation-for="user.full_name"></span>
+                                <span class="text-danger" asp-validation-for="user.full_name"></span>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
-                                <label>
-                                    E-mailadres*
-                                </label> <br>
-                                
-                                <input asp-for="user.mail" type="text"><span asp-validation-for="user.mail"></span>
+                                 <label>E-mailadres* </label> <br>
+                                 <input asp-for="user.mail" type="text"><span class="text-danger"  asp-validation-for="user.mail"></span>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
                                 <label>Wachtwoord*</label> <br>
-                                <input asp-for="user.password" type="text">
-                                <span asp-validation-for="user.password"></span>
+                                <input asp-for="user.password" type="password">
+                                <span class="text-danger" asp-validation-for="user.password"></span>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
                                 <input type="checkbox"
                                 <label for="nieuwsbrief">Ja, ik meld bij aan voor de nieuwsbrief!</label>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
                                 <input type="checkbox" value="1"
                                 <label for="nieuwsbrief">Klik op het vakje om te bevestigen dat u geen robot bent.*</label>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="column">
                                 <input type="submit" value="Submit">
                             </div>
                         </div>
+
                     </div>
                 </form>
+
                 <p>*=Verplicht</p>
                 <p>Met het versturen van dit registratieformulier, gaat u automatisch akkoord met de <a href="/Privacy">privacy voorwaarden</a>.</p>
 

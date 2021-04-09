@@ -15,11 +15,6 @@ namespace Car_Cost_Calculator.Pages
         [BindProperty(SupportsGet = true)]
         public User user { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public Vehicle vehicle { get; set; }
-
-
-
         public void OnGet()
         {
             HttpContext.Session.Remove("email");

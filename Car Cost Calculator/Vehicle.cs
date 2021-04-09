@@ -9,14 +9,15 @@ namespace Car_Cost_Calculator
 {
     public class Vehicle
     {
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter your Number plate"), MinLength(2), MaxLength(40)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter your Number plate"), MinLength(2), MaxLength(16)]
         [BindProperty]
         public string Number_Plate { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter your vehicle"), MinLength(2), MaxLength(40)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter your vehicle"), MinLength(2), MaxLength(20)]
         [BindProperty]
         public string Vehicle_Kind { get; set; }
 
+        //[Required(AllowEmptyStrings = false), MinLength(1), MaxLength(40)]
         [BindProperty]
         public string Account_ID { get; set; }
 

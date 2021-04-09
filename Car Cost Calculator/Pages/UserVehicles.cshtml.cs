@@ -10,17 +10,13 @@ namespace Car_Cost_Calculator.Pages
 {
     public class UserVehiclesModel : PageModel
     {
-        [BindProperty(SupportsGet = true)]
-        public User user { get; set; }
         
         [BindProperty(SupportsGet = true)]
         public Vehicle vehicle { get; set; }
 
         public void OnGet()
         {
-            var usermail = HttpContext.Session.GetString("email");
-            var password = HttpContext.Session.GetString("password");
-            vehicle.Account_ID = usermail;
+
         }
 
         public IEnumerable<Vehicle> vehicles
@@ -40,7 +36,7 @@ namespace Car_Cost_Calculator.Pages
 
         public IActionResult OnPostAdd() 
         {
-            
+            vehicle.Account_ID = HttpContext.Session.GetString("email");
             if (ModelState.IsValid) 
             {   
                 var AddVehicle = new CarCostRepository().VehicleAdd(vehicle);
@@ -51,6 +47,14 @@ namespace Car_Cost_Calculator.Pages
         public void OnPostDelete(string numberPlate)
         {
             new CarCostRepository().DeleteVehicle(numberPlate);
+        }
+
+        public void GetSession() 
+        {
+
+            var usermail = HttpContext.Session.GetString("email");
+            var password = HttpContext.Session.GetString("password");
+            vehicle.Account_ID = usermail;
         }
     }
 }

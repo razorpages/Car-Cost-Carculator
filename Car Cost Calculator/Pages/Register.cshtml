@@ -59,14 +59,14 @@
                         <div class="row">
                             <div class="column">
                                  <label>E-mailadres* </label> <br>
-                                 <input class="text-danger" asp-for="user.mail" type="text"><span asp-validation-for="user.mail"></span>
+                                 <input asp-for="user.mail" type="text"><span class="text-danger"  asp-validation-for="user.mail"></span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="column">
                                 <label>Wachtwoord*</label> <br>
-                                <input asp-for="user.password" type="text">
+                                <input asp-for="user.password" type="password">
                                 <span class="text-danger" asp-validation-for="user.password"></span>
                             </div>
                         </div>

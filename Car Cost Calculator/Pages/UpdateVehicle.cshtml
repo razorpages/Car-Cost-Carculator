@@ -7,7 +7,6 @@
 <form method="post" asp-page-handler="Update">
     <input type="hidden" asp-for="vehicle.Account_ID">
     <div class="form-group">
-        <h1>@Model.vehicle.Number_Plate</h1>
         <label>Vehicle Name:</label>
         <input type="text" asp-for="vehicle.Vehicle_Kind" class="form-control">
         <span asp-validation-for="vehicle.Vehicle_Kind"></span>

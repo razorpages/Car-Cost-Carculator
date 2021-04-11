@@ -123,20 +123,6 @@ namespace Car_Cost_Calculator
             return addVehicle;
         }
 
-        /// <summary>
-        /// Query To Add Costs to the Database
-        /// </summary>
-        /// <param name="costs"></param>
-        /// <returns></returns>
-        public Costs CostsAdd(Costs costs)
-        {
-            using var connection = Connect();
-            connection.Query<Costs>(
-            $@"INSERT INTO costs(Cost_Name, Cost_Amount, Cost_Date, Vehicle_Cost) 
-            VALUES (@Cost_Name, @Cost_Amount, @Cost_Date, @Vehicle_Cost);", costs);
-            return null;
-        }
-
         //READ
         /// <summary>
         /// Gets vehicles by Users
@@ -163,35 +149,10 @@ namespace Car_Cost_Calculator
         }
 
 
-        /// <summary>
-        /// Gets costs by Users
-        /// </summary>
-        /// <param name="UserID">Unique Account ID</param>
-        /// <returns>List of All Costs from the selected vehicle</returns>
-        public List<Vehicle> GetCostsByID(string UserID)
-        {
-            using var connection = Connect();
-            var Items = connection.Query<Vehicle>($@"SELECT * FROM Costs WHERE Vehicle_Cost = @Vehicle_Cost", new { Vehicle_Cost = UserID });
-            return Items.ToList();
-        }
+
         
 
         //UPDATE
-
-        /// <summary>
-        /// Update Selected Costs
-        /// </summary>
-        /// <param name="cost"></param>
-        /// <returns></returns>
-        public Costs UpdateCosts(Costs cost)
-        {
-            using var connection = Connect();
-            var ItemUpdate = connection.QuerySingleOrDefault<Costs>(
-                $@"UPDATE costs 
-                SET Cost_ID = @Cost_ID, Cost_Name = @Cost_Name, Cost_Amount = @Cost_Amount, Cost_Date = @Cost_Date, Vehicle_Cost = Vehicle_Cost = @Vehicle_Cost
-                WHERE Cost_ID = @Cost_ID", cost);
-            return ItemUpdate;
-        }
 
         /// <summary>
         /// Updates Vehicle Information
@@ -231,20 +192,7 @@ namespace Car_Cost_Calculator
             return numRowsEffected == 1;
         }
 
-        /// <summary>
-        /// Deletes 
-        /// </summary>
-        /// <param name="Cost_ID"></param>
-        /// <returns></returns>
-        public bool DeleteCosts(int Cost_ID)
-        {
-            using var connection = Connect();
-            int numRowsEffected = connection.Execute(
-                "DELETE FROM costs WHERE Cost_ID = @CostID",
-                new { CostID = Cost_ID });
 
-            return numRowsEffected == 1;
-        }
 
 
 

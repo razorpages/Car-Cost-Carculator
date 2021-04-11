@@ -10,7 +10,6 @@ namespace Car_Cost_Calculator
 {
     public class Costs
     {
-        [Required()]
         [BindProperty]
         public int Cost_ID { get; set; }
 
@@ -26,7 +25,6 @@ namespace Car_Cost_Calculator
         [BindProperty]
         public DateTime Cost_Date { get; set; }
 
-        [Required()]
         [BindProperty]
         public string Vehicle_Cost { get; set; }
     }

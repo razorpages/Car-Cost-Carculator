@@ -27,5 +27,7 @@ namespace Car_Cost_Calculator
 
         [BindProperty]
         public string Vehicle_Cost { get; set; }
+
+        public string Number_Plate { get; set; }
     }
 }

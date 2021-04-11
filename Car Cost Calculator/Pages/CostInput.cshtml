@@ -47,8 +47,8 @@
                                     
                                     <form method="post" asp-page-handler="AddCost" id="costform">
 
-                                        <div class="form-group"> 
-                                            <label>Naam kostenpost:</label> 
+                                        <div class="form-group">
+                                            <label>Naam kostenpost:</label>
                                             <input asp-for="costs.Cost_Name" class="form-control" placeholder="Soort kost">
                                             <span asp-validation-for="costs.Cost_Name"></span>
                                         </div>
@@ -66,6 +66,14 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label>Voor welke auto:</label>
+                                            <input asp-for="costs.Vehicle_Cost"  class="form-control" placeholder="">
+                                            <span asp-validation-for="costs.Vehicle_Cost"></span>
+                                        </div>
+
+
+
+                                        @*<div class="form-group">
                                             <label>Voor welke Auto?</label>
 
                                             <select asp-for="costs.Vehicle_Cost">
@@ -77,8 +85,8 @@
                                                 }
                                             </select>
 
-                                        </div>
-                            
+                                        </div>*@
+
                                         <button type="submit" class="btn btn-secondary" role:"button">Submit</button>
                                     </form>
                          

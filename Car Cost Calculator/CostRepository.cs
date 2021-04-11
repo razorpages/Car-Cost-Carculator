@@ -10,13 +10,15 @@ namespace Car_Cost_Calculator
 {
     public class CostRepository
     {
+        public object Number { get; private set; }
+
         /// <summary>
         /// Makes connection to the database
         /// </summary>
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Voetbal11;";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -25,13 +27,14 @@ namespace Car_Cost_Calculator
             using var connection = Connect();
             Costs addCost = connection.QueryFirstOrDefault<Costs>(
             $@"INSERT INTO costs(
-            Cost_Name, Cost_Amount, Cost_Date)
-            VALUES (@Cost_Name, @Cost_Amount, @Cost_Date);"
+            Cost_Name, Cost_Amount, Cost_Date, Vehicle_Cost)
+            VALUES (@Cost_Name, @Cost_Amount, @Cost_Date, @Vehicle_Cost);"
             , new
             {
                 Cost_Name = costs.Cost_Name,
                 Cost_Amount = costs.Cost_Amount,
                 Cost_Date = costs.Cost_Date,
+               Vehicle_Cost = costs.Vehicle_Cost
             });
 
             return addCost;

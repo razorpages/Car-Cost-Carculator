@@ -18,7 +18,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Voetbal11;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=;";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -82,6 +82,25 @@ namespace Car_Cost_Calculator
             using var connection = Connect();
             var Items = connection.Query<Vehicle>($@"SELECT * FROM Costs WHERE Vehicle_Cost = @Vehicle_Cost", new { Vehicle_Cost = UserID });
             return Items.ToList();
+        }
+
+        //Tank Costs
+        public Tank TankCostAdd(Tank Tankcosts)
+        {
+            using var connection = Connect();
+            var addCost = connection.QueryFirstOrDefault<Tank>(
+            $@"INSERT INTO tank(
+            Current_KM, Tank_Cost, Tank_Date, Vehicle_KM)
+            VALUES (@Current_KM, @Tank_Cost, @Tank_Date, @Vehicle_KM);"
+            , new
+            {
+                Current_KM = Tankcosts.Current_KM,
+                Tank_Cost = Tankcosts.Tank_Cost,
+                Tank_Date = Tankcosts.Tank_Date,
+                Vehicle_KM = Tankcosts.Vehicle_KM
+            });
+
+           return addCost;
         }
     }
 }

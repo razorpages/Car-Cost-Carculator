@@ -15,7 +15,7 @@ namespace Car_Cost_Calculator.Pages
 
         public void OnGet()
         {
-            HttpContext.Session.GetString("Number_Plate");
+
         }
 
         public IActionResult OnPostAddCost()

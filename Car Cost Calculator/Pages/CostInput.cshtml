@@ -66,15 +66,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Voor welke auto:</label>
-                                            <input asp-for="costs.Vehicle_Cost"  class="form-control" placeholder="">
-                                            <span asp-validation-for="costs.Vehicle_Cost"></span>
-                                        </div>
-
-
-
-                                        @*<div class="form-group">
-                                            <label>Voor welke Auto?</label>
+                                            <label>Kies hier uw auto:</label>
 
                                             <select asp-for="costs.Vehicle_Cost">
                                                 @foreach (var NumberPlate in Model.vehicles)
@@ -85,7 +77,7 @@
                                                 }
                                             </select>
 
-                                        </div>*@
+                                        </div>
 
                                         <button type="submit" class="btn btn-secondary" role:"button">Submit</button>
                                     </form>

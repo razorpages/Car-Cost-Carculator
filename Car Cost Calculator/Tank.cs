@@ -9,17 +9,12 @@ namespace Car_Cost_Calculator
 {
     public class Tank
     {
-        [Required()]
         [BindProperty]
         public int Tank_ID { get; set; }
 
         [Required()]
         [BindProperty]
-        public int Before_Tank_KM { get; set; }
-
-        [Required()]
-        [BindProperty]
-        public int After_Tank_KM { get; set; }
+        public double Current_KM { get; set; }
 
         [Required()]
         [BindProperty]

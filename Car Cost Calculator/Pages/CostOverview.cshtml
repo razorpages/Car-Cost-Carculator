@@ -36,69 +36,32 @@
                     <thead>
                         <tr>
                             <th scope="col">Voertuig:</th>
-                            <th scope="col">Mercedes</th>
-                            <th scope="col">Honda car</th>
-                            <th scope="col">Aston Martin car</th>
+                            <th scope="col">Kenteken:</th>
+                            <th scope="col">Prijs (bij aanschaf):</th>
+                            <th scope="col">Tank Kosten:</th>
+                            <th scope="col">Overige Kosten:</th>
+                            <th scope="col">Totaal:</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Kenteken:</th>
-                            <td>AC-130-HP</td>
-                            <td>BB-90-PP</td>
-                            <td>FOR-I-80</td>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">Kilometerstand:</th>
-                            <td>1300</td>
-                            <td>1300</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aanschafdatum:</th>
-                            <td>2020-03-15 15:00:01</td>
-                            <td>2020-03-15 15:00:01</td>
-                            <td>2010-03-15 09:45:09</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Aanschafprijs:</th>
-                            <td>4799</td>
-                            <td>4799</td>
-                            <td>2400</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Brandstofkosten:</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Wegenbelastingskosten:</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Verzekeringskosten:</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Overige kosten:</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Totaal:</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
+                    <tbody>
+                        @foreach (var vehicle in Model.vehicles)
+                        {
+                            <tr>
+                                <td>@vehicle.Vehicle_Kind</td>
+                                <td>@vehicle.Number_Plate</td>
+                                <td>@vehicle.BuyCost</td>
+                            </tr>
+                        }
+                        @foreach (var cost in Model.Info)
+                        {
+                            @*<tr>
+                                <td>@cost.Cost_Amount</td>
+                            </tr>*@
+                        }
 
                     </tbody>
+
                 </table>
 
 

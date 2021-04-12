@@ -18,7 +18,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Voetbal11";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -101,6 +101,30 @@ namespace Car_Cost_Calculator
             });
 
            return addCost;
+        }
+
+        public List<Costs> GetCosts()
+        {
+            using var connection = Connect();
+            var Costs = connection.Query<Costs>
+                ($@"SELECT Vehicle_Kind, Number_Plate, BuyCost, tank.Tank_Cost , SUM(costs.Cost_Amount) AS MiscCosts, tank.Tank_Cost + SUM(costs.Cost_Amount) AS Total
+                    FROM Vehicle
+                    INNER JOIN Costs ON Vehicle.Number_Plate = Costs.Vehicle_Cost
+                    INNER JOIN tank ON Vehicle.Number_Plate = tank.Vehicle_KM
+                ");
+            return Costs.ToList();
+        }
+
+        public List<Costs> GetAllInfo()
+        {
+            using var connection = Connect();
+            var Costs = connection.Query<Costs>
+                ($@"SELECT Vehicle_Kind, Number_Plate, BuyCost, tank.Tank_Cost , SUM(costs.Cost_Amount) AS MiscCosts, tank.Tank_Cost + SUM(costs.Cost_Amount) AS Total
+                    FROM Vehicle
+                    INNER JOIN Costs ON Vehicle.Number_Plate = Costs.Vehicle_Cost
+                    INNER JOIN tank ON Vehicle.Number_Plate = tank.Vehicle_KM
+                ");
+            return Costs.ToList();
         }
     }
 }

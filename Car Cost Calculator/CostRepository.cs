@@ -18,7 +18,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Tarantino.2";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=12345678";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -55,20 +55,6 @@ namespace Car_Cost_Calculator
             return numRowsEffected == 1;
         }
 
-        public List<Tank> GetTankCosts(Tank tank)
-        {
-            using var connection = Connect();
-            var Tankcosts = connection.Query<Tank>
-                ($@"SELECT Tank_Cost, Tank_Date, Vehicle_KM
-                    FROM tank
-                    WHERE Vehicle_KM = @Number_Plate;",
-                    new
-                    {
-                        Number_Plate = tank.Vehicle_KM
-                    }
-                );
-            return Tankcosts.ToList();
-        }
 
         /// <summary>
         /// Update Selected Costs

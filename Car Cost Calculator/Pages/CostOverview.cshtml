@@ -51,6 +51,14 @@
                                 <td>@vehicle.Vehicle_Kind</td>
                                 <td>@vehicle.Number_Plate</td>
                                 <td>@vehicle.BuyCost</td>
+                                @foreach (var tank in Model.tanks)
+                                {
+                                    <td>@tank.Tank_Cost</td>
+                                }
+                                @foreach (var cost in Model.cost)
+                                {
+                                    <td>@cost.Cost_Amount</td>
+                                }
                             </tr>
                         }
                         @foreach (var cost in Model.Info)

@@ -20,7 +20,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Tarantino.2;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=12345678";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -128,6 +128,15 @@ namespace Car_Cost_Calculator
         /// Gets vehicles by Users
         /// </summary>
         /// <returns>List of All Vehicles from the designated user</returns>
+        /// 
+
+        public List<Vehicle> GetAllVehicles()
+        {
+            using var connection = Connect();
+            var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle");
+            return Items.ToList();
+        }
+
         public List<Vehicle> GetVehiclesByID(string email, string Password) //inputID = email input from user
         {
             using var connection = Connect();
@@ -141,16 +150,35 @@ namespace Car_Cost_Calculator
             return MyVehicles.ToList();
         }
 
-        public List<Vehicle> GetAllVehicles()
+        public List<Tank> GetTankByID(string Vehicle_Kind, string Number_Plate) //laat alleen kosten zien verbonden aan auto's
         {
             using var connection = Connect();
-            var Items = connection.Query<Vehicle>($@"SELECT * FROM Vehicle");
-            return Items.ToList();
+            var MyTank = connection.Query<Tank>(
+            $@"SELECT * 
+            FROM Tank
+            INNER JOIN Vehicle
+            ON vehicle.Number_Plate = Tank.Vehicle_KM
+            WHERE vehicle.Number_Plate = @Number_Plate AND vehicle.Vehicle_Kind = @Vehicle_Kind;
+            ", new { Vehicle_Kind = Vehicle_Kind, Number_Plate = Number_Plate });
+            return MyTank.ToList();
+        }
+
+        public List<Costs> GetCostByID(string Vehicle_Kind, string Number_Plate) //laat alleen kosten zien verbonden aan auto's
+        {
+            using var connection = Connect();
+            var MyVehicles = connection.Query<Costs>(
+            $@"SELECT * 
+            FROM Costs
+            INNER JOIN Vehicle
+            ON vehicle.Number_Plate = Vehicle.Account_ID
+            WHERE vehicle.Number_Plate = @Number_Plate AND vehicle.Vehicle_Kind = @Vehicle_Kind;
+            ", new { Vehicle_Kind = Vehicle_Kind, Number_Plate = Number_Plate });
+            return MyVehicles.ToList();
         }
 
 
 
-        
+
 
         //UPDATE
 

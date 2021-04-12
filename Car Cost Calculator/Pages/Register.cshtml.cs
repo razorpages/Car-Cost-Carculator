@@ -31,7 +31,7 @@ namespace Car_Cost_Calculator.Pages
                 {
                     var Register = new CarCostRepository().Register(user);
                     SetSession();
-                    return RedirectToPage("UserVehicles");
+                    return RedirectToPage("Instructions");
                 }
                 else 
                 {

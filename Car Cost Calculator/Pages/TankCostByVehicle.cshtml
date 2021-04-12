@@ -1,0 +1,37 @@
+﻿@page
+@model Car_Cost_Calculator.Pages.TankCostByVehicleModel
+@{
+}
+
+
+<div class="col-sm-8 text-left">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Kenteken:</th>
+                <th scope="col">Tank Kosten:</th>
+                <th scope="col">Kilometerstand:</th>
+            </tr>
+        </thead>
+
+        <form method="get" asp-page-handler="MyTankCosts">
+            <input type="hidden" asp-for="tank.Vehicle_KM">
+            
+            <tbody>
+                @foreach (var Cost in Model.tanks)
+                {
+                    <tr>
+                        <td>@Cost.Vehicle_KM</td>
+                        <td>@Cost.Tank_Cost</td>
+                        <td>@Cost.Current_KM</td>
+                    </tr>
+                }
+            </tbody>
+
+        </form>
+
+    </table>
+
+
+
+</div>

@@ -2,3 +2,48 @@
 @model Car_Cost_Calculator.Pages.InstructionsModel
 @{
 }
+
+
+<head>
+    <link rel="stylesheet" href="~/css/Instructions.css" type="text/css">
+</head>
+
+<h1 class="display-4">Welkom bij de Car-Cost-Calculator!</h1>
+<hr class="bg-warning">
+
+<h1>1. Wat is de Car-Cost-Calculator?</h1>
+<p>De Car-Cost-Calculator is de website, waarmee u uw kosten van al uw voertuigen in één oogopslag zien!</p>
+
+<hr class="bg-warning">
+
+<h1>2. Gebruik</h1>
+
+<h3>Auto's Toevoegen</h3>
+<p>Op de onderstaande afbeelding ziet u een voorbeeld tabel, met daarin een lijst van auto's die een gebruiker bezit.
+   U kunt hier al uw voertuigen in stoppen van auto's tot bromfietsen,
+   Door in de invoervelden onderaan de benodigde informatie in te vullen, en op het knopje "Add" te drukken. </p>
+<div class="images">
+    <img src="~/Images/InstructionPage/InstructionPage1.png" />
+</div>
+
+<h3>Auto's Manipuleren</h3>
+<p>Wilt u een auto wijzigen? klik dan op de "Edit"-knop!
+   Hier wordt u doorverwezen naar de Edit-Pagina, en hierin kunt u de informatie van uw auto wijzigen.
+   U hoeft alleen maar de juiste informatie te geven, en de verandering te bevestigen door op het knopje onderaan te klikken.</p>
+
+<p>Wilt u een auto verwijderen? Dat kan ook!
+   Klik simpelweg op de "Delete"-Knop, en de auto is foetsie!</p>
+
+<hr class="bg-warning">
+
+<h3>Kosten Toevoegen</h3>
+<p>Wilt u een kostenpost toevoegen? Klik dan op het "kosten invoeren" linkje, die verwijst je door naar de kosten invoeren-pagina.
+   Hier kunt u gegevens over de kostenpost invoeren, en wordt deze toegevoegd aan uw lijst van kosten.
+   Deze lijst van kosten is te zien op de kostenoverzicht-pagina. Op deze pagina wordt al u kosten berekend, zodat u op de hoogte bent van uw uitgaven.</p>
+<div class="images">
+    <img src="~/Images/InstructionPage/InstructionPage2.png" />
+</div>
+<p>Om uw kosten te verwijderen en te wijzigen, kunt uw in de tabel van kosten overzicht, op de knop "edit" of "delete" drukken. 
+   Hetzelfde trucje als bij uw voertuigen.</p>
+
+<a class="btn btn-outline-warning" asp-page="MyAccount">Begrepen</a>

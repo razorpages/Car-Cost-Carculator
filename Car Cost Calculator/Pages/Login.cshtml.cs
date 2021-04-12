@@ -37,7 +37,7 @@ namespace Car_Cost_Calculator.Pages
                 if (checkexist == true)
                 {
                     SetSession();
-                    return RedirectToPage("UserVehicles");
+                    return RedirectToPage("MyAccount");
                 }
                 else 
                 {

@@ -20,6 +20,14 @@ namespace Car_Cost_Calculator.Pages
         {
             get { return new CarCostRepository().GetVehiclesByID(HttpContext.Session.GetString("email"), HttpContext.Session.GetString("password")); }
         }
+        public IEnumerable<Tank> tanks
+        {
+            get { return new CarCostRepository().GetTankByID("Vehicle_Kind", "Number_Plate"); }
+        }
+        public IEnumerable<Costs> cost
+        {
+            get { return new CarCostRepository().GetCostByID("Vehicle_Kind", "Number_Plate"); }
+        }
 
         public IEnumerable<Costs> Info 
         {

@@ -459,3 +459,4 @@ C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car C
 C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.genruntimeconfig.cache
 C:\Users\niels\OneDrive\Documenten\GitHub\CarCost\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\FuelCostInput.cshtml.g.cs
 C:\Users\kevin\OneDrive\Documenten\GitHub\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\FuelCostInput.cshtml.g.cs
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\FuelCostInput.cshtml.g.cs

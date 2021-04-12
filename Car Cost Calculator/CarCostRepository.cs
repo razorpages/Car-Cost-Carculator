@@ -20,7 +20,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Voetbal11;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=12345678;";
             return new MySqlConnection(Connectionstring);
         }
 

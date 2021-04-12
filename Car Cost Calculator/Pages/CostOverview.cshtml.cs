@@ -12,7 +12,9 @@ namespace Car_Cost_Calculator.Pages
     {
         public void OnGet()
         {
+
         }
+        public Vehicle vehicle { get; set; }
 
         public IEnumerable<Vehicle> vehicles
         {

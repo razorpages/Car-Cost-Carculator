@@ -8,21 +8,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Car_Cost_Calculator.Pages
 {
-    public class CostInputModel : PageModel
+    public class FuelCostInputModel : PageModel
     {
         [BindProperty(SupportsGet = true)]
-        public Costs costs { get; set; }
-
+        public Tank tank { get; set; }
         public void OnGet()
         {
-
         }
 
-        public IActionResult OnPostAddCost()
+        public IActionResult OnPostAddTankCost() 
         {
             if (ModelState.IsValid)
             {
-                var Addcost = new CostRepository().CostsAdd(costs);
+                new CostRepository().TankCostAdd(tank);
                 return Page();
             }
             return Page();

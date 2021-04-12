@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.AspNetCore.Http;
 using MySql.Data.MySqlClient;
 
 namespace Car_Cost_Calculator
@@ -19,12 +20,13 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=12345678;";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Voetbal11;";
             return new MySqlConnection(Connectionstring);
         }
 
 
         //User Functions (Register and Login)
+
         /// <summary>
         /// Adds account to the database
         /// </summary>
@@ -58,6 +60,43 @@ namespace Car_Cost_Calculator
             return Login;
         }
 
+        /// <summary>
+        /// Checks whether a record exists of the same e-mail
+        /// </summary>
+        /// <param name="userscheck">Class User</param>
+        /// <returns>if a record exists, return true(1). if not, return false(0)</returns>
+        public bool CheckAccountExist(User userscheck) 
+        {
+            using var connection = Connect();
+            int accExist = connection.ExecuteScalar<int>(
+            $@"SELECT COUNT(1) FROM users WHERE mail =  @mail",
+            new { mail = userscheck.mail });
+            if (accExist == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Validates Login Information
+        /// </summary>
+        /// <param name="users"></param>
+        /// <returns>true if information matches, if not then false</returns>
+        public bool CheckAccountLogin(User users) 
+        {
+            using var connection = Connect();
+            User userCheck = connection.QuerySingleOrDefault<User>(
+                $@"SELECT * FROM users WHERE mail = @mail AND password = @password"
+                , new { mail = users.mail, password = users.password });
+            if (userCheck != null) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         //CREATE
         /// <summary>
         /// Query To add Vehicle to the Database
@@ -71,22 +110,17 @@ namespace Car_Cost_Calculator
             $@"INSERT INTO Vehicle(
             Number_Plate, Vehicle_Kind, Account_ID, Current_KM, BuyDate, BuyCost)
             VALUES (@Number_Plate, @Vehicle_Kind, @Account_ID, @Current_KM, @BuyDate, @BuyCost);"
-            , vehicle);
-            return addVehicle;
-        }
+            ,new
+            {
+                Number_Plate = vehicle.Number_Plate,
+                Vehicle_Kind = vehicle.Vehicle_Kind,
+                Account_ID = vehicle.Account_ID,
+                Current_KM = vehicle.Current_KM,
+                BuyDate = vehicle.BuyDate,
+                BuyCost = vehicle.BuyCost
+            });
 
-        /// <summary>
-        /// Query To Add Costs to the Database
-        /// </summary>
-        /// <param name="costs"></param>
-        /// <returns></returns>
-        public Costs CostsAdd(Costs costs)
-        {
-            using var connection = Connect();
-            connection.Query<Costs>(
-            $@"INSERT INTO costs(Cost_Name, Cost_Amount, Cost_Date, Vehicle_Cost) 
-            VALUES (@Cost_Name, @Cost_Amount, @Cost_Date, @Vehicle_Cost);", costs);
-            return null;
+            return addVehicle;
         }
 
         //READ
@@ -97,21 +131,14 @@ namespace Car_Cost_Calculator
         public List<Vehicle> GetVehiclesByID(string email, string Password) //inputID = email input from user
         {
             using var connection = Connect();
-            var Items = connection.Query<Vehicle>(
-            $@"SELECT * FROM Vehicle WHERE Account_ID = @mail AND password = @password;",
-            new { mail = email, password = Password });
-
-            return Items.ToList();
-        }
-
-        public List<Vehicle> GetVehiclesByNameOnly(string email) //inputID = email input from user
-        {
-            using var connection = Connect();
-            var Items = connection.Query<Vehicle>(
-            $@"SELECT * FROM Vehicle WHERE Account_ID = @mail",
-            new { mail = email});
-
-            return Items.ToList();
+            var MyVehicles = connection.Query<Vehicle>(
+            $@"SELECT * 
+            FROM Vehicle
+            INNER JOIN users
+            ON users.mail = Vehicle.Account_ID
+            WHERE users.mail = @mail AND users.password = @password;
+            ",new { mail = email, password = Password });
+            return MyVehicles.ToList();
         }
 
         public List<Vehicle> GetAllVehicles()
@@ -122,35 +149,10 @@ namespace Car_Cost_Calculator
         }
 
 
-        /// <summary>
-        /// Gets costs by Users
-        /// </summary>
-        /// <param name="UserID">Unique Account ID</param>
-        /// <returns>List of All Costs from the selected vehicle</returns>
-        public List<Vehicle> GetCostsByID(string UserID)
-        {
-            using var connection = Connect();
-            var Items = connection.Query<Vehicle>($@"SELECT * FROM Costs WHERE Vehicle_Cost = @Vehicle_Cost", new { Vehicle_Cost = UserID });
-            return Items.ToList();
-        }
+
         
 
         //UPDATE
-
-        /// <summary>
-        /// Update Selected Costs
-        /// </summary>
-        /// <param name="cost"></param>
-        /// <returns></returns>
-        public Costs UpdateCosts(Costs cost)
-        {
-            using var connection = Connect();
-            var ItemUpdate = connection.QuerySingleOrDefault<Costs>(
-                $@"UPDATE costs 
-                SET Cost_ID = @Cost_ID, Cost_Name = @Cost_Name, Cost_Amount = @Cost_Amount, Cost_Date = @Cost_Date, Vehicle_Cost = Vehicle_Cost = @Vehicle_Cost
-                WHERE Cost_ID = @Cost_ID", cost);
-            return ItemUpdate;
-        }
 
         /// <summary>
         /// Updates Vehicle Information
@@ -162,9 +164,14 @@ namespace Car_Cost_Calculator
             using var connection = Connect();
             var ItemUpdate = connection.QuerySingleOrDefault<Vehicle>(
                 $@"UPDATE Vehicle
-                SET Vehicle_Kind = @Vehicle_Kind, Account_ID = @Account_ID, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
-                WHERE Number_Plate = @Number_Plate;"
-                , vehicle);
+                SET Vehicle_Kind = @Vehicle_Kind, Current_KM = @Current_KM, BuyDate = @BuyDate, BuyCost = @BuyCost
+                WHERE Number_Plate = @Number_Plate;", vehicle);
+                //new {
+                //Vehicle_Kind = vehicle.Vehicle_Kind,
+                //Current_KM = vehicle.Current_KM,
+                //BuyDate = vehicle.BuyDate,
+                //BuyCost = vehicle.BuyCost
+                //});
             return ItemUpdate;
         }
 
@@ -185,20 +192,7 @@ namespace Car_Cost_Calculator
             return numRowsEffected == 1;
         }
 
-        /// <summary>
-        /// Deletes 
-        /// </summary>
-        /// <param name="Cost_ID"></param>
-        /// <returns></returns>
-        public bool DeleteCosts(int Cost_ID)
-        {
-            using var connection = Connect();
-            int numRowsEffected = connection.Execute(
-                "DELETE FROM costs WHERE Cost_ID = @CostID",
-                new { CostID = Cost_ID });
 
-            return numRowsEffected == 1;
-        }
 
 
 

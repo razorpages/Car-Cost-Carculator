@@ -1,5 +1,5 @@
 ﻿@page
-@model Car_Cost_Calculator.Pages.CostInputModel
+@model Car_Cost_Calculator.Pages.FuelCostInputModel
 @{
 }
 <!DOCTYPE html>
@@ -37,38 +37,31 @@
                                 <!--eventueel ook specefiek voertuig aanwijzen? Href?-->
                                 <!--kijk naar my vehichles-->
                                 <!--splits kost op in 2 soorten-->
-                                
                                 <div class="col-md-12">
-
-                                    <div class="btn-group">
-                                        <a href="/FuelCostInput" class="btn btn-secondary" role:"button">Tank-Kosten</a> 
-                                        <a href="/CostInput" class="btn btn-warning" role:"button">Auto-kosten</a> 
-                                    </div>
+                                    <div class="btn-group"><a href="/FuelCostInput" class="btn btn-warning" role:"button">Tank-Kosten</a> <a href="/CostInput" class="btn btn-secondary" role:"button">Auto-kosten</a> </div>
                                     
-                                    <form method="post" asp-page-handler="AddCost" id="costform">
+                                    <form method="post" asp-page-handler="AddTankCost" id="costform">
 
                                         <div class="form-group">
-                                            <label>Naam kostenpost:</label>
-                                            <input asp-for="costs.Cost_Name" class="form-control" placeholder="Soort kost">
-                                            <span asp-validation-for="costs.Cost_Name"></span>
+                                            <label>Tankbeurt kosten:</label>
+                                            <input asp-for="tank.Tank_Cost"  class="form-control" placeholder="€">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Prijs:</label>
-                                            <input asp-for="costs.Cost_Amount" type="number" class="form-control" placeholder="€">
-                                            <span asp-validation-for="costs.Cost_Amount"></span>
+                                            <label>Kilometerstand waarde:</label>
+                                            <input asp-for="tank.Current_KM" type="number" class="form-control" placeholder="Gereden kilometers na tankbeurt">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Datum kostenpost:</label>
-                                            <input asp-for="costs.Cost_Date" type="date" class="form-control" placeholder="01-01-2000">
-                                            <span asp-validation-for="costs.Cost_Date"></span>
+                                            <label>Datum tankbeurt</label>
+                                            <input asp-for="tank.Tank_Date" type="date" class="form-control" placeholder="01-01-2000">
                                         </div>
+
 
                                         <div class="form-group">
                                             <label>Kies hier uw auto:</label>
 
-                                            <select asp-for="costs.Vehicle_Cost">
+                                            <select asp-for="tank.Vehicle_KM">
                                                 @foreach (var NumberPlate in Model.vehicles)
                                                 {
                                                     <optgroup label="@NumberPlate.Vehicle_Kind">
@@ -81,7 +74,7 @@
 
                                         <button type="submit" class="btn btn-secondary" role:"button">Submit</button>
                                     </form>
-                         
+                                 
                                 </div>
                             </div>
                             <div class="col-md-6" style=""></div>

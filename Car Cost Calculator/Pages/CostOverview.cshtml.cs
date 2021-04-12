@@ -22,11 +22,11 @@ namespace Car_Cost_Calculator.Pages
         }
         public IEnumerable<Tank> tanks
         {
-            get { return new CarCostRepository().GetTankByID("Vehicle_Kind", "Number_Plate"); }
+            get { return new CarCostRepository().GetTankByID("@vehicle.Vehicle_Kind", "@vehicle.Number_Plate"); }
         }
         public IEnumerable<Costs> cost
         {
-            get { return new CarCostRepository().GetCostByID("Vehicle_Kind", "Number_Plate"); }
+            get { return new CarCostRepository().GetCostByID("@vehicle.Vehicle_Kind", "@vehicle.Number_Plate"); }
         }
 
         public IEnumerable<Costs> Info 

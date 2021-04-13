@@ -578,3 +578,4 @@ C:\Users\bryan\source\repos\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\ne
 C:\Users\bryan\source\repos\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.dll
 C:\Users\bryan\source\repos\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.pdb
 C:\Users\bryan\source\repos\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Car Cost Calculator.genruntimeconfig.cache
+C:\C# code\Car-Cost-Carculator\Car Cost Calculator\obj\Debug\netcoreapp3.1\Razor\Pages\TankCostByVehicle.cshtml.g.cs

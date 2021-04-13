@@ -12,5 +12,6 @@ namespace Car_Cost_Calculator.Pages
         public void OnGet()
         {
         }
+        public User user { get; set; }
     }
 }

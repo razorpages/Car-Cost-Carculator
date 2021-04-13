@@ -22,9 +22,9 @@ namespace Car_Cost_Calculator.Pages
 
         }
 
-        public IEnumerable<Tank> tanks
-        {
-            get { return new CostRepository().GetTankCosts(tank); }
-        }
+        //public IEnumerable<Tank> tanks
+        //{
+            //get { return new CostRepository().GetTankCosts(tank); }
+        //}
     }
 }

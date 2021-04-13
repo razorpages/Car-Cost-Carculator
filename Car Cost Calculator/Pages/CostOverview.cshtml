@@ -60,6 +60,11 @@
                                     <td>@cost.Cost_Amount</td>
                                 }
                             </tr>
+                            // ipv foreach loop laat een sum de model.cost/model/tanks doen en laat totaal sum query over alle kosten zijn
+                            // eerste foreach loop returned nu alleen data maar moet sum teruggeven
+                            // tweede foreach loop moet ook scherm returnen.
+                            // op auto klikken moet naar tankcostbyvehicle linken zodat je alle inviduele tankbeurten kan zien.
+                            // query foreach loop niet gelukt, rest van site werkt wel.
                         }
                         @foreach (var cost in Model.Info)
                         {

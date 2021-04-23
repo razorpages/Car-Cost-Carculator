@@ -20,7 +20,7 @@ namespace Car_Cost_Calculator
         /// <returns></returns>
         private IDbConnection Connect()
         {
-            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=Tarantino.2";
+            string Connectionstring = "Server=localhost;Database=carcostdatabase;User Id=root;Password=12345678";
             return new MySqlConnection(Connectionstring);
         }
 
@@ -220,7 +220,14 @@ namespace Car_Cost_Calculator
             return numRowsEffected == 1;
         }
 
-
+        //voorbeeldquery joins
+        //USE carcostdatabase;
+        //DESC SELECT v.*, sum(c.Cost_Amount) as kosten, sum(t.Tank_Cost) as tanken
+        //  FROM vehicle as v
+        //LEFT JOIN costs AS c ON c.Vehicle_Cost= v.Number_Plate
+        //LEFT JOIN tank AS t ON t.Vehicle_KM = v.Number_Plate
+        //WHERE Account_ID = "haha@mail.com"
+        //GROUP BY v.Number_Plate
 
 
 

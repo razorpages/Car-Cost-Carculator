@@ -31,6 +31,11 @@ namespace Car_Cost_Calculator.Pages
             get { return new CarCostRepository().GetAccounts(); }
         }
 
+        public string GetCosts() 
+        {
+            var total = new CostRepository().TotalCost(HttpContext.Session.GetString("email"));
+            return total.ToString();
+        }
 
         //CRUD
 

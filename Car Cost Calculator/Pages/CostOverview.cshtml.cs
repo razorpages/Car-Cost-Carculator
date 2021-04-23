@@ -33,5 +33,6 @@ namespace Car_Cost_Calculator.Pages
         {
             get { return new CostRepository().GetCosts(); }
         }
+
     }
 }

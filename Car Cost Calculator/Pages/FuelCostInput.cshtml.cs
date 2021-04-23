@@ -12,6 +12,7 @@ namespace Car_Cost_Calculator.Pages
     {
         [BindProperty(SupportsGet = true)]
         public Tank tank { get; set; }
+
         public void OnGet()
         {
         }
